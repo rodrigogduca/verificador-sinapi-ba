@@ -33,15 +33,17 @@ npm run build && npm run test:e2e   # ponta a ponta (Playwright) no build de pro
 
 ## Produção
 
-O GitHub Actions roda todos os testes e, na branch `main`, aplica as migrações no Supabase de
-produção e publica no GitHub Pages. Configuração do repositório:
+O GitHub Actions roda todos os testes e, na branch `main`, publica no GitHub Pages (e aplica as
+migrações no Supabase de produção, se os segredos opcionais estiverem configurados). Configuração do repositório:
 
 | Tipo | Nome | Valor |
 |---|---|---|
 | Variable | `SUPABASE_PROJECT_REF` | referência do projeto Supabase |
 | Variable | `VITE_SUPABASE_URL` | `https://<ref>.supabase.co` |
 | Variable | `VITE_SUPABASE_ANON_KEY` | chave pública (anon) |
-| Secret | `SUPABASE_ACCESS_TOKEN` | token de acesso do Supabase (para migrações) |
-| Secret | `SUPABASE_DB_PASSWORD` | senha do banco de produção |
+| Secret (opcional) | `SUPABASE_ACCESS_TOKEN` | só se quiser que o CI aplique as migrações |
+| Secret (opcional) | `SUPABASE_DB_PASSWORD` | idem |
+
+Sem os segredos, aplique as migrações manualmente: `npx supabase link --project-ref <ref>` e `npx supabase db push`.
 
 Convidar usuários: painel do Supabase → Authentication → Users → *Invite user*.

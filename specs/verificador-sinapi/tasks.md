@@ -7,7 +7,7 @@
 - [x] 0.1 Projeto Vite + React + TypeScript, Vitest, Playwright, ESLint mínimo
 - [x] 0.2 Cópia de workers/WASM/dados de idioma para `public/` no build (RNF7)
 - [x] 0.3 CSP + proteção contra iframe no `index.html` (RNF7)
-- [ ] 0.4 Repositório Git + GitHub + workflow (testes, `npm audit`, build, deploy no Pages) (RNF6)
+- [x] 0.4 Repositório Git + GitHub + workflow (testes, `npm audit`, build, deploy no Pages) (RNF6)
 - [x] 0.5 Supabase: esquema + RLS (migração), config de Auth (sem cadastro público, senha forte) (R10, R11)
 - [x] 0.6 Testes de integração das regras RLS no Supabase local (RNF8)
 - [x] 0.7 Login, definir senha (convite/recuperação), logout; aba Usuários; histórico (R10–R12)
@@ -29,7 +29,7 @@
 - [x] 2.2 PDF anotado (pdf-lib) + Excel corrigido a partir de tabela extraída (R9)
 - [x] 2.3 Avisos de BDI: inconsistência e faixa TCU; tipo de obra na tela (R7)
 - [x] 2.4 Exportar relatório em Excel e PDF (R8)
-- [ ] 2.5 Testes de unidade + E2E PDF; publicar
+- [x] 2.5 Testes de unidade + E2E PDF
 
 ## Etapa 3 — Word
 - [x] 3.1 Extração DOCX → Grid (tabelas, gridSpan, texto fora de tabela) (R2, R3)

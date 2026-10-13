@@ -64,11 +64,17 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      # Opcional: só roda se os segredos existirem. Sem eles, as migrações são aplicadas
+      # manualmente (npx supabase db push) e nenhuma credencial do banco fica no GitHub.
       - name: Migrações do banco de produção
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
           SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
         run: |
+          if [ -z "$SUPABASE_ACCESS_TOKEN" ] || [ -z "$SUPABASE_DB_PASSWORD" ]; then
+            echo "Segredos do Supabase ausentes: migrações não aplicadas pelo CI."
+            exit 0
+          fi
           npx supabase link --project-ref "${{ vars.SUPABASE_PROJECT_REF }}" -p "$SUPABASE_DB_PASSWORD"
           npx supabase db push -p "$SUPABASE_DB_PASSWORD"
       - name: Build de produção
