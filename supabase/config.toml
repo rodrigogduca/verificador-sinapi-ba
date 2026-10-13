@@ -413,3 +413,11 @@ enabled = true
 # formatted with uppercase keywords, indent 2, max width 180, trailing commas,
 # and column/key alignment. Set to "null" to emit raw, unformatted SQL.
 # format_options = "{\"keywordCase\":\"upper\",\"indent\":2,\"maxWidth\":180,\"commaStyle\":\"trailing\"}"
+
+# Produção: mesmas regras de autenticação, com o endereço público do site
+[remotes.producao]
+project_id = "yoayspsbhunlgwtdoarj"
+
+[remotes.producao.auth]
+site_url = "https://rodrigogduca.github.io/verificador-sinapi-ba/"
+additional_redirect_urls = ["https://rodrigogduca.github.io/verificador-sinapi-ba/"]

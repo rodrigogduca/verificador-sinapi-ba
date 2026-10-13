@@ -11,7 +11,7 @@
 - [x] 0.5 Supabase: esquema + RLS (migração), config de Auth (sem cadastro público, senha forte) (R10, R11)
 - [x] 0.6 Testes de integração das regras RLS no Supabase local (RNF8)
 - [x] 0.7 Login, definir senha (convite/recuperação), logout; aba Usuários; histórico (R10–R12)
-- [ ] 0.8 Projeto Supabase de produção + migrações + variáveis no GitHub Actions
+- [x] 0.8 Projeto Supabase de produção + migrações + variáveis no GitHub Actions
 
 ## Etapa 1 — MVP: SINAPI + Excel + verificação + Excel corrigido
 - [x] 1.1 Domínio: tipos, números BR, centavos, unidades, similaridade de texto
