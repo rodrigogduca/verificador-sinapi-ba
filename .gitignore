@@ -1,0 +1,13 @@
+node_modules
+dist
+public/vendor
+test-results
+playwright-report
+tests/fixtures/out
+*.log
+.DS_Store
+.env.local
+.env.*.local
+supabase/.branches
+supabase/.temp
+*.tsbuildinfo
