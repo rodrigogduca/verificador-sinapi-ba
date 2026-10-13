@@ -16,7 +16,8 @@
     "test:integration": "vitest run -c vitest.integration.config.ts",
     "db:start": "supabase start",
     "db:reset": "supabase db reset",
-    "env:local": "node scripts/env-local.mjs"
+    "env:local": "node scripts/env-local.mjs",
+    "test:smoke": "playwright test -c playwright.smoke.config.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.3",

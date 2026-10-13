@@ -73,7 +73,7 @@ export function Login({ sb }: { sb: SupabaseClient }) {
   );
 }
 
-export function DefinirSenha({ sb, convite, onConcluir }: { sb: SupabaseClient; convite: boolean; onConcluir: () => void }) {
+export function DefinirSenha({ sb, convite, onConcluir, onCancelar }: { sb: SupabaseClient; convite: boolean; onConcluir: () => void; onCancelar?: () => void }) {
   const [senha, setSenha] = useState('');
   const [confirma, setConfirma] = useState('');
   const [erro, setErro] = useState<string>();
@@ -108,7 +108,10 @@ export function DefinirSenha({ sb, convite, onConcluir }: { sb: SupabaseClient; 
         </label>
         <p className="muted small">Mínimo de 10 caracteres, com letras maiúsculas, minúsculas e números.</p>
         {erro && <div className="alerta erro" role="alert">{erro}</div>}
-        <button className="btn primario" disabled={ocupado} type="submit">Salvar senha</button>
+        <div className="row">
+          <button className="btn primario" disabled={ocupado} type="submit">Salvar senha</button>
+          {onCancelar && <button className="btn" type="button" onClick={onCancelar}>Cancelar</button>}
+        </div>
       </form>
     </main>
   );

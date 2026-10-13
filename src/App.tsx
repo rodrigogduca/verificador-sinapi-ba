@@ -16,6 +16,7 @@ export default function App() {
   const [sessao, setSessao] = useState<Session | null | undefined>(undefined);
   const [perfil, setPerfil] = useState<Perfil | null>(null);
   const [definirSenha, setDefinirSenha] = useState(tipoLinkInicial === 'invite' || tipoLinkInicial === 'recovery');
+  const [alterarSenha, setAlterarSenha] = useState(false);
   const [aba, setAba] = useState<Aba>('verificar');
   const [erroPerfil, setErroPerfil] = useState<string>();
 
@@ -43,6 +44,7 @@ export default function App() {
   if (sessao === undefined) return <main className="muted">Carregando…</main>;
   if (!sessao) return <Login sb={sb} />;
   if (definirSenha) return <DefinirSenha sb={sb} convite={tipoLinkInicial === 'invite'} onConcluir={() => setDefinirSenha(false)} />;
+  if (alterarSenha) return <DefinirSenha sb={sb} convite={false} onConcluir={() => setAlterarSenha(false)} onCancelar={() => setAlterarSenha(false)} />;
   if (erroPerfil) return <main><div className="alerta erro">{erroPerfil}</div><button className="btn" onClick={sair}>Sair</button></main>;
   if (!perfil) return <main className="muted">Carregando perfil…</main>;
   if (!perfil.ativo) {
@@ -77,6 +79,7 @@ export default function App() {
         </nav>
         <div className="usuario">
           <span data-testid="usuario-logado">{perfil.email} ({admin ? 'administrador' : 'analista'})</span>
+          <button className="btn" onClick={() => setAlterarSenha(true)}>Alterar senha</button>
           <button className="btn" onClick={sair}>Sair</button>
         </div>
       </header>

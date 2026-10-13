@@ -58,9 +58,10 @@ export function UsuariosTab({ sb, meuId }: { sb: SupabaseClient; meuId: string }
       <section className="card">
         <h2>Como convidar um novo usuário</h2>
         <ol className="small">
-          <li>Abra o painel do Supabase do projeto → <strong>Authentication → Users → Add user → Send invitation</strong>.</li>
-          <li>Informe o e-mail da pessoa. Ela recebe um link, define a própria senha neste sistema e entra como <strong>analista</strong>.</li>
-          <li>Para dar acesso de administrador, mude o papel aqui nesta tela.</li>
+          <li>Abra o painel do Supabase do projeto → <strong>Authentication → Users → Add user</strong>.</li>
+          <li><strong>Send invitation</strong>: a pessoa recebe um link por e-mail e define a própria senha (exige e-mail configurado no Supabase; sem SMTP próprio, só funciona para e-mails da equipe do Supabase).</li>
+          <li>Ou <strong>Create new user</strong> com uma senha provisória e <em>Auto Confirm User</em> marcado: envie a senha à pessoa, que troca em <strong>Alterar senha</strong> no primeiro acesso.</li>
+          <li>Todo usuário novo entra como <strong>analista</strong>. Para dar acesso de administrador, mude o papel aqui nesta tela.</li>
         </ol>
         <p className="muted small">O convite é feito pelo painel para que a chave de administração do banco nunca fique no site. Desativar um usuário corta o acesso aos dados imediatamente.</p>
       </section>

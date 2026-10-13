@@ -22,7 +22,7 @@
 - [x] 1.6 Writer Excel corrigido (cores, notas, fórmulas, aba de resumo) (R9)
 - [x] 1.7 Interface: abas, importação, upload, conferência/mapeamento, resultado, downloads (R1–R3, R8)
 - [x] 1.8 Fixtures sintéticas + testes de unidade + E2E Excel
-- [ ] 1.9 Publicar e testar em produção
+- [x] 1.9 Publicar e testar em produção
 
 ## Etapa 2 — PDF com texto + BDI + relatórios
 - [x] 2.1 Extração PDF (pdf.js): linhas, células, atribuição por coluna, continuação de descrição (R2, R3)
