@@ -32,9 +32,9 @@
 - [ ] 2.5 Testes de unidade + E2E PDF; publicar
 
 ## Etapa 3 — Word
-- [ ] 3.1 Extração DOCX → Grid (tabelas, gridSpan, texto fora de tabela) (R2, R3)
-- [ ] 3.2 Writer DOCX: troca de texto, sombreamento, comentários, tabela de resumo (R9)
-- [ ] 3.3 Testes de unidade + E2E DOCX; publicar
+- [x] 3.1 Extração DOCX → Grid (tabelas, gridSpan, texto fora de tabela) (R2, R3)
+- [x] 3.2 Writer DOCX: troca de texto, sombreamento, comentários, tabela de resumo (R9)
+- [x] 3.3 Testes de unidade + E2E DOCX; publicar
 
 ## Etapa 4 — OCR (PDF escaneado / imagem)
 - [ ] 4.1 Detecção de página sem texto; renderização; tesseract `por` self-hosted (R2)
