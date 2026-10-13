@@ -6,11 +6,11 @@
 ## Etapa 0 — Fundação
 - [x] 0.1 Projeto Vite + React + TypeScript, Vitest, Playwright, ESLint mínimo
 - [x] 0.2 Cópia de workers/WASM/dados de idioma para `public/` no build (RNF7)
-- [ ] 0.3 CSP + proteção contra iframe no `index.html` (RNF7)
+- [x] 0.3 CSP + proteção contra iframe no `index.html` (RNF7)
 - [ ] 0.4 Repositório Git + GitHub + workflow (testes, `npm audit`, build, deploy no Pages) (RNF6)
-- [ ] 0.5 Supabase: esquema + RLS (migração), config de Auth (sem cadastro público, senha forte) (R10, R11)
-- [ ] 0.6 Testes de integração das regras RLS no Supabase local (RNF8)
-- [ ] 0.7 Login, definir senha (convite/recuperação), logout; aba Usuários; histórico (R10–R12)
+- [x] 0.5 Supabase: esquema + RLS (migração), config de Auth (sem cadastro público, senha forte) (R10, R11)
+- [x] 0.6 Testes de integração das regras RLS no Supabase local (RNF8)
+- [x] 0.7 Login, definir senha (convite/recuperação), logout; aba Usuários; histórico (R10–R12)
 - [ ] 0.8 Projeto Supabase de produção + migrações + variáveis no GitHub Actions
 
 ## Etapa 1 — MVP: SINAPI + Excel + verificação + Excel corrigido
@@ -20,8 +20,8 @@
 - [x] 1.4 Detecção de tabela, classificação de linhas, metadados (R3)
 - [x] 1.5 Motor de verificação: código, descrição, unidade, preço, total, somatórios, BDI (R4–R7)
 - [x] 1.6 Writer Excel corrigido (cores, notas, fórmulas, aba de resumo) (R9)
-- [ ] 1.7 Interface: abas, importação, upload, conferência/mapeamento, resultado, downloads (R1–R3, R8)
-- [ ] 1.8 Fixtures sintéticas + testes de unidade + E2E Excel
+- [x] 1.7 Interface: abas, importação, upload, conferência/mapeamento, resultado, downloads (R1–R3, R8)
+- [x] 1.8 Fixtures sintéticas + testes de unidade + E2E Excel
 - [ ] 1.9 Publicar e testar em produção
 
 ## Etapa 2 — PDF com texto + BDI + relatórios
@@ -37,7 +37,7 @@
 - [x] 3.3 Testes de unidade + E2E DOCX; publicar
 
 ## Etapa 4 — OCR (PDF escaneado / imagem)
-- [ ] 4.1 Detecção de página sem texto; renderização; tesseract `por` self-hosted (R2)
-- [ ] 4.2 Palavras OCR → Grid (com confiança); imagens JPG/PNG (R2, R3)
-- [ ] 4.3 Regra de baixa confiança → revisão manual; aviso de OCR no relatório (R2.3, R9.5)
-- [ ] 4.4 Testes E2E com documento escaneado; publicar
+- [x] 4.1 Detecção de página sem texto; renderização; tesseract `por` self-hosted (R2)
+- [x] 4.2 Palavras OCR → Grid (com confiança); imagens JPG/PNG (R2, R3)
+- [x] 4.3 Regra de baixa confiança → revisão manual; aviso de OCR no relatório (R2.3, R9.5)
+- [x] 4.4 Testes E2E com documento escaneado; publicar

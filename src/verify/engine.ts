@@ -296,14 +296,19 @@ function verificarSomatorios(rs: ResultadoLinha[], bdi: number | undefined, tol:
     let grupo: ResultadoLinha[];
     if (t === 'total') grupo = itens;
     else if (t === 'titulo') {
+      // itens até o próximo título que não seja subetapa deste (ex.: "1" contém "1.1", "1.1.2"),
+      // ou até um subtotal/total. Funciona com numeração imperfeita (ex.: OCR que perde pontos).
       const num = r.linha.valores.itemNum;
-      const desc = num ? itens.filter((i) => i.linha.valores.itemNum?.startsWith(num + '.')) : [];
-      if (desc.length) grupo = desc;
-      else {
-        grupo = [];
-        for (let k = pos + 1; k < rs.length && !['titulo', 'subtotal', 'total'].includes(rs[k].linha.tipo); k++) {
-          if (rs[k].linha.tipo === 'item' && rs[k].linha.valores.total !== undefined) grupo.push(rs[k]);
+      grupo = [];
+      for (let k = pos + 1; k < rs.length; k++) {
+        const tk = rs[k].linha.tipo;
+        if (tk === 'subtotal' || tk === 'total') break;
+        if (tk === 'titulo') {
+          const sub = rs[k].linha.valores.itemNum;
+          if (!num || !sub || !sub.startsWith(num + '.')) break;
+          continue;
         }
+        if (tk === 'item' && rs[k].linha.valores.total !== undefined) grupo.push(rs[k]);
       }
     } else grupo = rs.slice(inicioGrupo, pos).filter((x) => x.linha.tipo === 'item' && x.linha.valores.total !== undefined);
     if (t === 'subtotal' || t === 'total') inicioGrupo = pos + 1;

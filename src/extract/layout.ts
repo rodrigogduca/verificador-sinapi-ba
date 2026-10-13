@@ -48,12 +48,18 @@ export function agruparLinhas(palavras: Palavra[]): LinhaPdf[] {
     grupos.sort((a, b) => b.y - a.y);
     for (const g of grupos) {
       const itens = g.itens.sort((a, b) => a.x0 - b.x0);
+      // OCR devolve palavra a palavra: junta palavras da mesma frase (espaço ~ altura da letra);
+      // texto nativo do PDF já vem em trechos, então só junta fragmentos colados
+      const ocr = itens.some((it) => it.confidence !== undefined);
+      const alturas = itens.map((it) => it.y1 - it.y0).sort((a, b) => a - b);
+      const hMed = alturas[Math.floor(alturas.length / 2)] ?? g.h;
+      const limiteGap = ocr ? hMed * 0.9 : Math.max(1.5, g.h * 0.35);
       const tokens: Token[] = [];
       for (const it of itens) {
         const ult = tokens[tokens.length - 1];
         const gap = ult ? it.x0 - ult.x1 : Infinity;
-        if (ult && gap < Math.max(1.5, g.h * 0.35)) {
-          ult.text += (gap > g.h * 0.12 ? ' ' : '') + it.text;
+        if (ult && gap < limiteGap) {
+          ult.text += (ocr || gap > g.h * 0.12 ? ' ' : '') + it.text;
           ult.x1 = Math.max(ult.x1, it.x1);
           ult.y0 = Math.min(ult.y0, it.y0);
           ult.y1 = Math.max(ult.y1, it.y1);
