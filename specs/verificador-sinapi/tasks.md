@@ -25,10 +25,10 @@
 - [ ] 1.9 Publicar e testar em produção
 
 ## Etapa 2 — PDF com texto + BDI + relatórios
-- [ ] 2.1 Extração PDF (pdf.js): linhas, células, atribuição por coluna, continuação de descrição (R2, R3)
-- [ ] 2.2 PDF anotado (pdf-lib) + Excel corrigido a partir de tabela extraída (R9)
-- [ ] 2.3 Avisos de BDI: inconsistência e faixa TCU; tipo de obra na tela (R7)
-- [ ] 2.4 Exportar relatório em Excel e PDF (R8)
+- [x] 2.1 Extração PDF (pdf.js): linhas, células, atribuição por coluna, continuação de descrição (R2, R3)
+- [x] 2.2 PDF anotado (pdf-lib) + Excel corrigido a partir de tabela extraída (R9)
+- [x] 2.3 Avisos de BDI: inconsistência e faixa TCU; tipo de obra na tela (R7)
+- [x] 2.4 Exportar relatório em Excel e PDF (R8)
 - [ ] 2.5 Testes de unidade + E2E PDF; publicar
 
 ## Etapa 3 — Word

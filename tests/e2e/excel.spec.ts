@@ -47,7 +47,7 @@ test('verifica o orçamento Excel e baixa a planilha corrigida', async ({ page }
 
   const corrigido = await baixarArquivo(page, 'baixar-xlsx-corrigido');
   const wb = new ExcelJS.Workbook();
-  await wb.xlsx.load(corrigido);
+  await wb.xlsx.load(new Uint8Array(corrigido).buffer);
   const ws = wb.getWorksheet('Orçamento')!;
   expect(ws.getCell(`G${linhaDoItem('1.2')}`).value).toBe(41.83);
   expect(wb.getWorksheet('Correções SINAPI')).toBeDefined();
